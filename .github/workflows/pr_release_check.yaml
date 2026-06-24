@@ -12,7 +12,7 @@ jobs:
       version_changed: ${{ steps.detect_version_change.outputs.version_changed }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Detect version change
         id: detect_version_change
         uses: ./.github/actions/detect-version-change
@@ -24,7 +24,7 @@ jobs:
     if: ${{ needs.check_release_trigger.outputs.version_changed == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Add "release" label
         uses: actions-ecosystem/action-add-labels@v1
         with:
@@ -59,7 +59,7 @@ jobs:
     if: ${{ needs.check_release_trigger.outputs.version_changed == 'false' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Remove "release" label
         uses: actions-ecosystem/action-remove-labels@v1
         with:
