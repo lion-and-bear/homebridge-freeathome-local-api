@@ -133,7 +133,7 @@ jobs:
           path: coverage
           retention-days: 1
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: lion-and-bear/homebridge-freeathome-local-api
