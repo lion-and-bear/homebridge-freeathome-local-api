@@ -371,14 +371,12 @@ export class FreeAtHomeHomebridgePlatform implements DynamicPlatformPlugin {
     locationConfiguredOnDeviceLevel: boolean
   ): channel is Channel {
     // Filter unsupported channels
-    if (
-      !(
-        channel.functionID &&
-        Object.values<string>(FunctionID).includes(
-          channel.functionID.toUpperCase()
-        )
+    if (!(
+      channel.functionID &&
+      Object.values<string>(FunctionID).includes(
+        channel.functionID.toUpperCase()
       )
-    ) {
+    )) {
       this.log.debug(
         `Ignored ${serial} (${channelId}): FunctionID '${
           channel.functionID ?? "<UNDEFINED>"
