@@ -10,7 +10,7 @@ importers:
     dependencies:
       freeathome-local-api-client:
         specifier: ^1.14.0
-        version: 1.14.0
+        version: 1.15.0
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
@@ -1154,8 +1154,8 @@ packages:
     resolution: {integrity: sha512-vKatAh4SlVfgbv+YtmhiRjhEMJsYpsG1Y2rMQtR+SVSbytsSD1YGzDIcrAJmdFec88u/+VoGmxnl+80gL1tRCQ==}
     engines: {node: '>= 6'}
 
-  freeathome-local-api-client@1.14.0:
-    resolution: {integrity: sha512-PKJ5VPQ5dnizEAjnpTvwYbJxvuX6Me32BKzjRXCD9SJ64kVh7LkMY3yShlQ3Ig43b0zE+rbfKlrdHF8coDsE3g==}
+  freeathome-local-api-client@1.15.0:
+    resolution: {integrity: sha512-7aP5mrvRl7hBZkbvTUp5V8NAIe3TNb6D1FDL2TA/iolHR2RGSvNta2okuzMV5BcSQUfxjpLmm9CXrhRTpnrDwQ==}
 
   from@0.1.7:
     resolution: {integrity: sha512-twe20eF1OxVxp/ML/kq2p1uc6KvFK/+vs8WjEbeKmV2He22MKm7YF2ANIt+EOqhJ5L3K/SuuPhk0hWQDjOM23g==}
@@ -3045,7 +3045,7 @@ snapshots:
       hasown: 2.0.4
       mime-types: 2.1.35
 
-  freeathome-local-api-client@1.14.0:
+  freeathome-local-api-client@1.15.0:
     dependencies:
       rxjs: 7.8.2
       ts-interface-checker: 1.0.2
