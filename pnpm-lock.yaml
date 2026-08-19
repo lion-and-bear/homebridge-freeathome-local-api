@@ -70,8 +70,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(supports-color@5.5.0)
       homebridge:
-        specifier: 2.3.2-beta.0
-        version: 2.3.2-beta.0(supports-color@5.5.0)
+        specifier: 2.4.0
+        version: 2.4.0(supports-color@5.5.0)
       jasmine:
         specifier: ^6.3.0
         version: 6.3.0
@@ -379,20 +379,20 @@ packages:
     resolution: {integrity: sha512-ogAVdPZ9Fo3kSaULpq+acxbtbIvMtd2TDYEkqHIsqvQ9QHJnRNcjm8NQzegaBzJ3gUK1mVX07UWs2/B0NmabSw==}
     hasBin: true
 
-  '@homebridge/ciao@1.3.11-beta.4':
-    resolution: {integrity: sha512-9m/qnVztzhxH3edQ63PPiZHUsP11AiBMl14+LAbMEh76Ck56QzQMeA8pXK2HVWfqxyl0pDCmzYmaW2npPGXm1Q==}
+  '@homebridge/ciao@1.3.12':
+    resolution: {integrity: sha512-84/0u0kqKy4qcKupIDaTtbkmk+3qFDuMzxTC0NPfVlHcUT+jHGdP+QCqwEw94/GJxRezDeBLwxaclkBZgCdeUg==}
     hasBin: true
 
   '@homebridge/dbus-native@0.7.8':
     resolution: {integrity: sha512-ZXcJzhA2Z3pYsSdQKcDZqELaJHzb5CXALlVHQRg+PHcXqx5xvL83ZPq8HdHCeavxS3pph6d85+zamCb1UFQa5A==}
     hasBin: true
 
-  '@homebridge/dbus-native@0.7.9-beta.0':
-    resolution: {integrity: sha512-WrmwymcMmKVrZFR5Ksm2rdvK3DxB32KhEiVqxNxT1Q/czOo/fTCPPY3cWr3k5+ZafGkGuIYBPqWR1qxaUifntg==}
+  '@homebridge/dbus-native@0.7.9':
+    resolution: {integrity: sha512-PFOeWyXfH2eoM4o6Zmj9PzCUDlrrbtrbAJVzHYXpXK5rh/dz84Ygu79WHKK3DWW2/oXieYPV6up+i1izSPbc3g==}
     hasBin: true
 
-  '@homebridge/hap-nodejs@2.2.1-beta.3':
-    resolution: {integrity: sha512-kiZWFNrT994g5YP9hhqHpD1SiwB8eG48enPHf3frOHPtkyXZ1flqZvknL14y86Bi+9TpVV2tW09AnOS0kFgDEg==}
+  '@homebridge/hap-nodejs@2.2.2':
+    resolution: {integrity: sha512-drTJSn63wGn5R6sDLmgjJdIW7G1awn1CxEEW1Jn+t3oCTMGSlk7lBZjGYbOpeL6acjiBqXNdo79NWcXn7s4CnQ==}
     engines: {node: ^22 || ^24 || ^26}
 
   '@humanfs/core@0.19.2':
@@ -451,27 +451,27 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@matter/general@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-/x8Xl9b1fSXmyyF0W0sGDIapFLNZWp7tq/IySctGNYN1LmdqEy31gfWBpfQ9foEjHayMMEDoc+XfvJ+iLvsJsA==}
+  '@matter/general@0.17.9':
+    resolution: {integrity: sha512-NMAhD/EKpfTb1e0UllUJLdWgViw+Jp41PoY6s4yVGAiuo0sot6CYSdQauXelQPldhonrn2bLSKAa2mQUKWdhLQ==}
 
-  '@matter/main@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-Rhp61pVPqlSzq6QNgJUTJmDZ6a65SrOmUkd+VkVoNKk4Q77ZvjG8UV6lx6sa9qPPV7GWfnhOkqIJJGGn9vhrdw==}
+  '@matter/main@0.17.9':
+    resolution: {integrity: sha512-YFBpU1AquN6sLC466xcOslAaERtlBnofHfuvDyY9B8UHZZJwFUfsDT7gMWVYkU5J/S9vc7lslL9TMvvns8Biaw==}
 
-  '@matter/model@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-eJ+0GgkWtYQEjUgpzmRo+VAfthpCHP9P+9JB0S8lvGUQHrSyXWnBcnhnbPtIX6W1iVby6+p29PwXv/dap8jyHA==}
+  '@matter/model@0.17.9':
+    resolution: {integrity: sha512-NICGlK8ubD2an1eKIhEX2osZRl5JjnZE3Z8CJGnWItyVU5MbX1ta/EdCx/eBGy8WQPTxpYu93keW3L6qTUMOlg==}
 
-  '@matter/node@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-1IIU5giuHSDug9SDzWHxPuZV6uauZtqfRc5NiMLCPYpinvRXt3QfNkdwZrBgw1m4TWSUkpyVuejrD6BxVDSmsg==}
+  '@matter/node@0.17.9':
+    resolution: {integrity: sha512-5AT6NYfIlLaILHAgVQoNZkuobff+CR7Ewkdj14YkENx77rRlujgDlDpXRiJkAHc+EUvRkwr5zA9ZL70XkwHkEw==}
 
-  '@matter/nodejs@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-pXXymXiEzbmv9IGzFXVdK4vp3bcLaDxYWz87nsDKBbCf3NVMDSz/HEWzuf747/eBzOt/R/O4r3DbOFd3cjgtHg==}
-    engines: {node: '>=20.19.0 <21.0.0 || >=22.13.0'}
+  '@matter/nodejs@0.17.9':
+    resolution: {integrity: sha512-2C3J89qeLyknLtbe/ls46dmjs/eN8LmMSKpGl90mC2ut8471z4rkpFYNE+MTJLFg8yzC+R86yi35Y3lBzioEwA==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.13.0'}
 
-  '@matter/protocol@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-P6OlSXTRaScIZ0FlT3w2srUubgc+ymPm64CHixnk/wjlZyfzDlsBV1vSpbCL3dZ7pQ2k0L12LrxljSGR6ww24Q==}
+  '@matter/protocol@0.17.9':
+    resolution: {integrity: sha512-BZg1BWwm3rHsFxyQm17VjpTNO3kwd+AIjI9dtfnPFkH5CeS7r6Ebd/9j8L0zxeVPotciMcSW8H5W+3kCcuB2HQ==}
 
-  '@matter/types@0.18.0-alpha.0-20260807-335c3291b':
-    resolution: {integrity: sha512-6th3hTsRBz0Y03it3Z6LiXtBLc7Cn1/hfGwaS1BgA4kXN/vwDwfseW0x+Uu703wLRJ5yqm/Nlgk13z1d0RYhRQ==}
+  '@matter/types@0.17.9':
+    resolution: {integrity: sha512-Tdb08WzfM2Ma962NTtNrHTA3S26eBGCj5/kpnpl9LS5Twpw78Rgk/jogOIM/HDVCbu/M/ZSQPmdBN/q3vWEXAw==}
 
   '@napi-rs/wasm-runtime@1.2.3':
     resolution: {integrity: sha512-UMduMbqO5s5zF2NkNacMT/yK5Y5QiKvWr2+50bzIIxFDwVJ2h49b+oyjaCGPhJxd2/gC2x39EHv/gHVuu36x2Q==}
@@ -770,8 +770,8 @@ packages:
   bonjour-hap@3.10.4:
     resolution: {integrity: sha512-300Ay6OMOeE0TGVimI1UuPMbmagMPcA8qR4c77YWY8M6cs7Skedu6Bhx5pcMQi1K1HUUdzTv3Rs4GD/OWxgdEw==}
 
-  bonjour-hap@3.10.5-beta.0:
-    resolution: {integrity: sha512-4c05fZxzWH3LnGV65LSiBjEk696lVuu4NmyyjOqq+kZgS80zCbmKyaDOrdWr7yjhp0l26kmtaQtvjYw2UuiRJw==}
+  bonjour-hap@3.10.5:
+    resolution: {integrity: sha512-8E81oIQF0pjlDNVAKcAGwPYYG9BKD42Q8Fi7eJ/vYxEwyL/M8YpjM4gnFC1QTmagWI3jzbw7jPI0q2C1qWfQLQ==}
 
   brace-expansion@1.1.18:
     resolution: {integrity: sha512-Edep/X9fGqVNmzKBVsDYIOtD+z1tuezV70LBjdCst9Tqu76lsnvRiZ6oTic1n+/BIwX6QDGAO94PN4N2SADvtw==}
@@ -1276,8 +1276,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  homebridge@2.3.2-beta.0:
-    resolution: {integrity: sha512-57AHaCYmegO/c8aF3zJylY2bztzA2iGZtsODM7+bQKkiHLAu3WSpi5kJufEXRx89OMW4IM/ZYWVBp9CztL7Nyw==}
+  homebridge@2.4.0:
+    resolution: {integrity: sha512-yAc/jGC04h6LqcZTiO6aubzKmCulWGIdYUx3lj8r/aJQbAL5EZta9aX71LWnko3bChhTaD7sS7LLJ5Hqu4DbVA==}
     engines: {node: ^22 || ^24 || ^26}
     hasBin: true
 
@@ -2220,7 +2220,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@homebridge/ciao@1.3.11-beta.4(supports-color@5.5.0)':
+  '@homebridge/ciao@1.3.12(supports-color@5.5.0)':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       fast-deep-equal: 3.1.3
@@ -2238,7 +2238,7 @@ snapshots:
       safe-buffer: 5.2.1
       xml2js: 0.6.2
 
-  '@homebridge/dbus-native@0.7.9-beta.0':
+  '@homebridge/dbus-native@0.7.9':
     dependencies:
       event-stream: 4.0.1
       hexy: 0.4.0
@@ -2247,11 +2247,11 @@ snapshots:
       safe-buffer: 5.2.1
       xml2js: 0.6.2
 
-  '@homebridge/hap-nodejs@2.2.1-beta.3(supports-color@5.5.0)':
+  '@homebridge/hap-nodejs@2.2.2(supports-color@5.5.0)':
     dependencies:
-      '@homebridge/ciao': 1.3.11-beta.4(supports-color@5.5.0)
-      '@homebridge/dbus-native': 0.7.9-beta.0
-      bonjour-hap: 3.10.5-beta.0
+      '@homebridge/ciao': 1.3.12(supports-color@5.5.0)
+      '@homebridge/dbus-native': 0.7.9
+      bonjour-hap: 3.10.5
       debug: 4.4.3(supports-color@5.5.0)
       fast-srp-hap: 2.0.4
       futoin-hkdf: 1.5.3
@@ -2315,49 +2315,49 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@matter/general@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/general@0.17.9':
     dependencies:
       '@noble/curves': 2.3.0
 
-  '@matter/main@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/main@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/model': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/node': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/protocol': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/types': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
+      '@matter/model': 0.17.9
+      '@matter/node': 0.17.9
+      '@matter/protocol': 0.17.9
+      '@matter/types': 0.17.9
     optionalDependencies:
-      '@matter/nodejs': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/nodejs': 0.17.9
 
-  '@matter/model@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/model@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
 
-  '@matter/node@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/node@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/model': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/protocol': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/types': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
+      '@matter/model': 0.17.9
+      '@matter/protocol': 0.17.9
+      '@matter/types': 0.17.9
 
-  '@matter/nodejs@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/nodejs@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/node': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/protocol': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/types': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
+      '@matter/node': 0.17.9
+      '@matter/protocol': 0.17.9
+      '@matter/types': 0.17.9
     optional: true
 
-  '@matter/protocol@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/protocol@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/model': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/types': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
+      '@matter/model': 0.17.9
+      '@matter/types': 0.17.9
 
-  '@matter/types@0.18.0-alpha.0-20260807-335c3291b':
+  '@matter/types@0.17.9':
     dependencies:
-      '@matter/general': 0.18.0-alpha.0-20260807-335c3291b
-      '@matter/model': 0.18.0-alpha.0-20260807-335c3291b
+      '@matter/general': 0.17.9
+      '@matter/model': 0.17.9
 
   '@napi-rs/wasm-runtime@1.2.3(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
@@ -2622,7 +2622,7 @@ snapshots:
       multicast-dns: 7.2.5
       multicast-dns-service-types: 1.1.0
 
-  bonjour-hap@3.10.5-beta.0:
+  bonjour-hap@3.10.5:
     dependencies:
       fast-deep-equal: 3.1.3
       multicast-dns: 7.2.5
@@ -3172,10 +3172,10 @@ snapshots:
 
   hexy@0.4.0: {}
 
-  homebridge@2.3.2-beta.0(supports-color@5.5.0):
+  homebridge@2.4.0(supports-color@5.5.0):
     dependencies:
-      '@homebridge/hap-nodejs': 2.2.1-beta.3(supports-color@5.5.0)
-      '@matter/main': 0.18.0-alpha.0-20260807-335c3291b
+      '@homebridge/hap-nodejs': 2.2.2(supports-color@5.5.0)
+      '@matter/main': 0.17.9
       chalk: 6.0.0
       commander: 15.0.0
       fs-extra: 11.4.0
