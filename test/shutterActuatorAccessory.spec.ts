@@ -188,7 +188,7 @@ describe("Shutter Accessory", () => {
     expect(await characteristicObs.handleGetRequest()).toBeFalse();
   });
 
-  it("should not handle a request to set TargetPosition characteristic if the value has not changed", async () => {
+  it("should still send a request to set TargetPosition even if the cached value is unchanged", async () => {
     channel.inputs = {
       idp0002: {
         value: "50",
@@ -216,7 +216,7 @@ describe("Shutter Accessory", () => {
     expect(await characteristic.handleGetRequest()).toBe(50);
     const spy = spyOn(accessory.platform.sysap, "setDatapoint");
     await characteristic.handleSetRequest(50);
-    expect(spy).not.toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled();
   });
 
   it("should handle request to set TargetPosition characteristic if the value has changed", async () => {
@@ -441,5 +441,45 @@ describe("Shutter Accessory", () => {
       accessory.platform.Characteristic.ObstructionDetected,
       true
     );
+  });
+  describe("target position sync for movements outside of HomeKit", () => {
+    const setup = (): {
+      accessory: ShutterActuatorAccessory;
+      tp: () => Promise<unknown>;
+    } => {
+      // fully open (HomeKit 100), stopped; last HomeKit target is 100
+      channel.inputs = { idp0002: { value: "0" } };
+      channel.outputs = {
+        odp0000: { value: "0" },
+        odp0001: { value: "0" },
+        odp0003: { value: "0" },
+      };
+      const accessory = new ShutterActuatorAccessory(
+        platform,
+        platformAccessory
+      );
+      const service = (accessory as unknown as { service: Service }).service;
+      const c = service.getCharacteristic(
+        accessory.platform.Characteristic.TargetPosition
+      );
+      return { accessory, tp: () => c.handleGetRequest() };
+    };
+
+    it("should follow the current position when stopped after a physical button press", async () => {
+      const { accessory, tp } = setup();
+      // wall button: starts closing, stops, final position arrives after stop
+      accessory.updateDatapoint("odp0000", "3");
+      expect(await tp()).toBe(0);
+      accessory.updateDatapoint("odp0000", "0");
+      accessory.updateDatapoint("odp0001", "15");
+      expect(await tp()).toBe(85);
+    });
+
+    it("should set target to 100 when opening starts below target", async () => {
+      const { accessory, tp } = setup();
+      accessory.updateDatapoint("odp0001", "50");
+      accessory.updateDatapoint("odp0000", "2");
+      expect(await tp()).toBe(100);
+    });
   });
 });
