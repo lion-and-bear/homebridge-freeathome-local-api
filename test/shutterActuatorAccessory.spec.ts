@@ -481,5 +481,23 @@ describe("Shutter Accessory", () => {
       accessory.updateDatapoint("odp0000", "2");
       expect(await tp()).toBe(100);
     });
+
+    it("should keep an intermediate HomeKit target while moving towards it", async () => {
+      const { accessory } = setup();
+      const service = (accessory as unknown as { service: Service }).service;
+      const characteristic = service.getCharacteristic(
+        accessory.platform.Characteristic.TargetPosition
+      );
+      spyOn(accessory.platform.sysap, "setDatapoint").and.resolveTo();
+      await characteristic.handleSetRequest(30);
+      // closing towards the target, intermediate position updates arrive
+      accessory.updateDatapoint("odp0000", "3");
+      accessory.updateDatapoint("odp0001", "40");
+      expect(await characteristic.handleGetRequest()).toBe(30);
+      // target reached
+      accessory.updateDatapoint("odp0000", "0");
+      accessory.updateDatapoint("odp0001", "70");
+      expect(await characteristic.handleGetRequest()).toBe(30);
+    });
   });
 });
