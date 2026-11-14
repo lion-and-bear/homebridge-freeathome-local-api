@@ -95,10 +95,41 @@ export class ShutterActuatorAccessory extends FreeAtHomeAccessory {
     }
   }
 
+  /**
+   * Aligns the target position with the actual movement, because movements
+   * triggered outside of HomeKit never update the target position.
+   */
+  private syncTargetPosition(): void {
+    const { PositionState } = this.platform.Characteristic;
+    let target = this.stateTargetPosition;
+    if (this.statePositionState === PositionState.STOPPED) {
+      target = this.stateCurrentPosition;
+    } else if (
+      this.statePositionState === PositionState.INCREASING &&
+      target <= this.stateCurrentPosition
+    ) {
+      target = 100;
+    } else if (
+      this.statePositionState === PositionState.DECREASING &&
+      target >= this.stateCurrentPosition
+    ) {
+      target = 0;
+    }
+    if (target === this.stateTargetPosition) return;
+
+    this.stateTargetPosition = target;
+    this.doUpdateDatapoint(
+      "Shutter Actuator",
+      this.service,
+      this.platform.Characteristic.TargetPosition,
+      target
+    );
+  }
+
   private async setTargetPosition(value: CharacteristicValue): Promise<void> {
-    // avoid unneccessary updates or update value
-    if (value == this.stateTargetPosition) return;
-    else this.stateTargetPosition = value as number;
+    // always send the command: the cached target can be stale after the
+    // shutter was moved by a physical button, so it must not suppress commands
+    this.stateTargetPosition = value as number;
 
     // log event
     this.platform.log.info(
@@ -129,6 +160,8 @@ export class ShutterActuatorAccessory extends FreeAtHomeAccessory {
           this.platform.Characteristic.PositionState,
           this.statePositionState
         );
+        // keep the target in sync when moved by other means (e.g. wall button)
+        this.syncTargetPosition();
         return;
       case "odp0001":
         this.stateCurrentPosition = 100 - parseInt(value);
@@ -138,6 +171,16 @@ export class ShutterActuatorAccessory extends FreeAtHomeAccessory {
           this.platform.Characteristic.CurrentPosition,
           this.stateCurrentPosition
         );
+        // Only align when stopped: the final position may arrive after the
+        // stop notification. Applying the moving-direction heuristic here
+        // would replace a HomeKit intermediate target with 0/100 once the
+        // reported position reaches or passes it while still moving.
+        if (
+          this.statePositionState ===
+          this.platform.Characteristic.PositionState.STOPPED
+        ) {
+          this.syncTargetPosition();
+        }
         return;
       case "odp0003":
         this.stateObstructed = !!parseInt(value);

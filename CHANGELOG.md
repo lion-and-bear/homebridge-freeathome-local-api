@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.25.1](https://github.com/lion-and-bear/homebridge-freeathome-local-api/releases/tag/1.25.1) - 12.11.2026
+
+### Fixed
+
+- [#65](https://github.com/lion-and-bear/homebridge-freeathome-local-api/issues/65): Shutter target position now follows movements triggered outside of HomeKit (e.g. wall buttons), so Apple Home no longer gets stuck on "Opening" / "Closing". Thanks to [@supaflyster](https://github.com/supaflyster) for the fix!
+
 ## [1.25.0](https://github.com/lion-and-bear/homebridge-freeathome-local-api/releases/tag/1.25.0) - 11.11.2026
 
 ### Added
