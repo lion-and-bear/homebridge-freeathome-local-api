@@ -171,8 +171,16 @@ export class ShutterActuatorAccessory extends FreeAtHomeAccessory {
           this.platform.Characteristic.CurrentPosition,
           this.stateCurrentPosition
         );
-        // the final position may arrive after the stop notification
-        this.syncTargetPosition();
+        // Only align when stopped: the final position may arrive after the
+        // stop notification. Applying the moving-direction heuristic here
+        // would replace a HomeKit intermediate target with 0/100 once the
+        // reported position reaches or passes it while still moving.
+        if (
+          this.statePositionState ===
+          this.platform.Characteristic.PositionState.STOPPED
+        ) {
+          this.syncTargetPosition();
+        }
         return;
       case "odp0003":
         this.stateObstructed = !!parseInt(value);

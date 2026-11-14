@@ -499,5 +499,25 @@ describe("Shutter Accessory", () => {
       accessory.updateDatapoint("odp0001", "70");
       expect(await characteristic.handleGetRequest()).toBe(30);
     });
+
+    it("should not replace a HomeKit target with 0/100 when position reaches it while still moving", async () => {
+      const { accessory } = setup();
+      const service = (accessory as unknown as { service: Service }).service;
+      const characteristic = service.getCharacteristic(
+        accessory.platform.Characteristic.TargetPosition
+      );
+      spyOn(accessory.platform.sysap, "setDatapoint").and.resolveTo();
+      await characteristic.handleSetRequest(50);
+      // closing from fully open (100) towards HomeKit target 50
+      accessory.updateDatapoint("odp0000", "3");
+      accessory.updateDatapoint("odp0001", "40");
+      expect(await characteristic.handleGetRequest()).toBe(50);
+      // current catches up to (or passes) the HomeKit target while still moving;
+      // must not treat that as an external move and force TargetPosition to 0
+      accessory.updateDatapoint("odp0001", "50");
+      expect(await characteristic.handleGetRequest()).toBe(50);
+      accessory.updateDatapoint("odp0001", "55");
+      expect(await characteristic.handleGetRequest()).toBe(50);
+    });
   });
 });
